@@ -21,5 +21,6 @@ class Questions(models.Model):
 class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     question = models.ForeignKey(Questions, on_delete=models.CASCADE)
+    is_correct = models.BooleanField(default=False)
     # created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
