@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'account:logout' %}">Logout</a>
+
+<form>
+    <ol>
+        {% for question in question_set %}
+        <li>{{question.question_text}}</li>
+            <ol>
+                {% for choice in question.choice_set.all %}
+                <li>{{choice.choice_text}}</li>
+                {% endfor %}
+            </ol>
+        {% endfor %}
+    </ol>
+</form>
+
+
+</body>
+</html>
